@@ -8,18 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-@interface thgpViewController : UIViewController 
+@interface timViewController : UIViewController 
 {
     
     UITextField *inputText;
     UITextField *outputText;
-    
+    UITextField *baseText;
   
 }
 
 @property (nonatomic, retain) IBOutlet UITextField *inputText;
 @property (nonatomic, retain) IBOutlet UITextField *outputText;
-
+@property (nonatomic, retain) IBOutlet UITextField *baseText;
 
 
 -(IBAction)converter:(id)sender;

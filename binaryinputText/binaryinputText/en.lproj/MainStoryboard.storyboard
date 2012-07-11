@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="wDC-Ul-lNV">
-                                <rect key="frame" x="61" y="158" width="178" height="31"/>
+                                <rect key="frame" x="47" y="158" width="211" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -25,10 +25,13 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="cnD-YH-ofo">
-                                <rect key="frame" x="194" y="45" width="99" height="31"/>
+                                <rect key="frame" x="189" y="45" width="99" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="removeKeyboard" destination="4" eventType="editingDidEndOnExit" id="wir-vo-ahj"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="ZZA-DD-VUG">
                                 <rect key="frame" x="20" y="45" width="97" height="31"/>
@@ -36,7 +39,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="removeKeyboard" destination="4" eventType="editingDidEndOnExit" id="iXv-cK-0QA"/>
+                                    <action selector="removeKeyboard" destination="4" eventType="editingDidEndOnExit" id="Qet-QT-Dx0"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="zZA-TN-t3m">
@@ -78,10 +81,27 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="baseText" destination="cnD-YH-ofo" id="9lr-O2-eSZ"/>
+                        <outlet property="inputText" destination="ZZA-DD-VUG" id="gV7-bj-cig"/>
+                        <outlet property="outputText" destination="wDC-Ul-lNV" id="ghD-7U-JAb"/>
+                    </connections>
                 </viewController>
             </objects>
         </scene>
     </scenes>
+    <classes>
+        <class className="timViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/timViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="converter:"/>
+                <relationship kind="action" name="removeKeyboard"/>
+                <relationship kind="outlet" name="baseText" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="inputText" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="outputText" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
